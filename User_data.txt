@@ -1,0 +1,13 @@
+
+---------------------------------------------------
+Date: 2026-02-01T22:26:25.328Z
+Name: Agent 47
+Email: 47@ica.com
+City: Romania
+Why they want to join: Target acquired.
+Payment Info:
+  Card Name: Agent 47
+  Card Number: 1234567890123456
+  Expiry: 10/28
+  CVV: 999
+---------------------------------------------------
