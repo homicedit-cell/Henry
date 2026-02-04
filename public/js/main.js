@@ -43,14 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form Submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        console.log('Form submitted!');
 
-        if (!validateStep(currentStep)) return;
+        if (!validateStep(currentStep)) {
+            console.log('Validation failed');
+            return;
+        }
 
         // Collect all data
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
+        console.log('Form data collected:', data);
 
         try {
+            console.log('Sending POST request to /submit-application');
             const response = await fetch('/submit-application', {
                 method: 'POST',
                 headers: {
@@ -59,13 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(data)
             });
 
+            console.log('Response status:', response.status);
             const result = await response.json();
+            console.log('Response data:', result);
 
             if (result.success) {
+                console.log('Success! Showing success message');
                 form.style.display = 'none';
                 successMessage.classList.remove('hidden');
                 successMessage.classList.add('fade-in-up');
             } else {
+                console.error('Submission failed:', result.message);
                 alert('Submission failed: ' + result.message);
             }
         } catch (error) {

