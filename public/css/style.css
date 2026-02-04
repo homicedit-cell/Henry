@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
-    --gold: #D4AF37;
-    --dark-charcoal: #121212;
-    --soft-charcoal: #1E1E1E;
+    --gold: #996132;
+    /* Matt Mathews copper/bronze accent */
+    --dark-charcoal: #110a05;
+    /* Matt Mathews dark brown background */
+    --soft-charcoal: #1E1410;
+    /* Slightly lighter brown */
 }
 
 body {
@@ -14,7 +17,10 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, .serif {
+h1,
+h2,
+h3,
+.serif {
     font-family: 'Playfair Display', serif;
 }
 
@@ -22,15 +28,18 @@ h1, h2, h3, .serif {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: var(--dark-charcoal); 
+    background: var(--dark-charcoal);
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #333; 
+    background: #333;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gold); 
+    background: var(--gold);
 }
 
 /* Animations */
@@ -40,10 +49,21 @@ h1, h2, h3, .serif {
     transform: translateY(20px);
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-500 { animation-delay: 0.5s; }
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -69,14 +89,20 @@ h1, h2, h3, .serif {
 .form-step {
     display: none;
 }
+
 .form-step.active {
     display: block;
     animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Glassmorphism for cards */
