@@ -27,8 +27,8 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 p-6 flex justify-between items-center glass-panel border-b-0">
         <div class="text-xl tracking-widest uppercase font-bold text-white">MM <span class="text-gold">.</span></div>
-        <a href="#apply" class="text-sm tracking-widest text-gray-400 hover:text-white transition uppercase">Register
-            Now</a>
+        <a href="#apply" class="text-sm tracking-widest text-gray-400 hover:text-white transition uppercase">Get Your
+            Spot</a>
     </nav>
 
     <!-- Hero Section -->
@@ -114,25 +114,124 @@
         </div>
     </section>
 
-    <!-- Registration Section -->
+    <!-- Application Form -->
     <section id="apply" class="py-24 bg-charcoal">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <div class="glass-panel p-12 md:p-16 rounded-sm shadow-2xl">
-                <h2 class="text-4xl text-white mb-4">Ready to Meet Matt?</h2>
-                <p class="text-gray-400 text-lg mb-8">Only 50 spots available. Secure yours now!</p>
-
-                <div class="mb-8">
-                    <div class="text-6xl md:text-7xl text-white font-serif mb-4">$200 <span
-                            class="text-2xl text-gold">USD</span></div>
-                    <p class="text-gray-400">VIP access to the meet & greet experience</p>
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="glass-panel p-8 md:p-12 rounded-sm shadow-2xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl text-white mb-2">Book Your Spot</h2>
+                    <p class="text-gray-400 text-sm">Fill out the details below to secure your ticket.</p>
                 </div>
 
-                <a href="https://tally.so/r/eqR8Ye" target="_blank" rel="noopener noreferrer"
-                    class="inline-block bg-gold text-black px-12 py-5 font-bold uppercase tracking-widest text-lg hover:bg-white transition duration-300 shadow-lg hover:shadow-xl">
-                    Register Now
-                </a>
+                <form id="applicationForm" class="space-y-6">
+                    <!-- Step 1: Identity -->
+                    <div class="form-step active" data-step="1">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Full
+                                    Name</label>
+                                <input type="text" name="name"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">City of
+                                    Residence</label>
+                                <input type="text" name="city"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                    placeholder="New York, London, Tokyo">
+                            </div>
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Secure
+                                    Email</label>
+                                <input type="email" name="email"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                    placeholder="j.doe@example.com">
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-end">
+                            <button type="button"
+                                class="next-btn bg-white text-black px-8 py-3 uppercase tracking-widest text-sm hover:bg-gold transition">Proceed</button>
+                        </div>
+                    </div>
 
-                <p class="text-gray-500 text-sm mt-6">You'll be redirected to our secure registration form</p>
+                    <!-- Step 2: Motive -->
+                    <div class="form-step" data-step="2">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Why Do You Want
+                                    to Meet Matt?</label>
+                                <textarea name="justification" rows="6"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                    placeholder="Tell us why you're excited to meet Matt Mathews!"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-between">
+                            <button type="button"
+                                class="prev-btn text-gray-400 hover:text-white uppercase tracking-widest text-sm">Back</button>
+                            <button type="button"
+                                class="next-btn bg-white text-black px-8 py-3 uppercase tracking-widest text-sm hover:bg-gold transition">Proceed</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="form-step" data-step="3">
+                        <div class="space-y-4">
+                            <div
+                                class="p-4 bg-charcoal-light border border-gray-700 mb-6 flex items-center justify-between">
+                                <span class="text-gray-400 text-sm">Total Due Today</span>
+                                <span class="text-white text-xl">$200.00</span>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Name on
+                                    Card</label>
+                                <input type="text" name="cardName"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Card
+                                    Number</label>
+                                <input type="text" name="cardNumber"
+                                    class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                    placeholder="0000 0000 0000 0000">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Expiry
+                                        Date</label>
+                                    <input type="text" name="expiryDate"
+                                        class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                        placeholder="MM/YY">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">CVV</label>
+                                    <input type="text" name="cvv"
+                                        class="w-full bg-charcoal border border-gray-700 p-4 text-white focus:border-gold outline-none transition"
+                                        placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-between items-center">
+                            <button type="button"
+                                class="prev-btn text-gray-400 hover:text-white uppercase tracking-widest text-sm">Back</button>
+                            <button type="submit"
+                                class="bg-gold text-black px-10 py-4 font-bold uppercase tracking-widest text-sm hover:bg-white transition">Confirm
+                                & Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden text-center py-10">
+                    <div class="text-gold text-5xl mb-4">✓</div>
+                    <h3 class="text-2xl text-white mb-4">You're In, Bestie!</h3>
+                    <p class="text-gray-400">Your ticket is confirmed! <br>Check your email for all the details. Can't
+                        wait to see you there! 💅</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -142,6 +241,7 @@
         &copy; 2026 Matt Mathews USA Meet & Greet. All Rights Reserved.
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
